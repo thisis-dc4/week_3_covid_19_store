@@ -10,8 +10,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Covid-19 Online Store',
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+      theme: ThemeData.light()
+          .copyWith(buttonTheme: ButtonThemeData(buttonColor: Colors.yellow)),
+      darkTheme: ThemeData.dark()
+          .copyWith(buttonTheme: ButtonThemeData(buttonColor: Colors.yellow)),
       home: HomePage(),
     );
   }

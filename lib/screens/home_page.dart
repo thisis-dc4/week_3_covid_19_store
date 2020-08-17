@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:week_3_covid_19_store/widgets/choice_row.dart';
+import 'package:week_3_covid_19_store/widgets/item_widget.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -28,6 +29,7 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           ChoiceRow(),
+          ItemWidget(),
         ],
       ),
     );
