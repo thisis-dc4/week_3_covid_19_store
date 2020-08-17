@@ -17,10 +17,14 @@ class _ChoiceRowState extends State<ChoiceRow> {
   @override
   Widget build(BuildContext context) {
     return Wrap(
+      spacing: 20.0,
       children: List<Widget>.generate(
         _types.length,
         (int index) {
           return ChoiceChip(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            labelPadding: const EdgeInsets.symmetric(horizontal: 8.0),
             label: Text(
               _types[index],
               style: TextStyle(fontWeight: FontWeight.bold),

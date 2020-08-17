@@ -20,7 +20,7 @@ class ItemWidget extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           Container(
-            height: 250,
+            height: 270,
             width: 200,
             decoration: BoxDecoration(
               color: Colors.red,
@@ -56,10 +56,10 @@ class ItemWidget extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: 130.0),
+            margin: EdgeInsets.only(bottom: 120.0),
             child: Image.asset(
               image,
-              height: 200,
+              height: 190,
             ),
           ),
         ],

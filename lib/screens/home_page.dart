@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:week_3_covid_19_store/widgets/choice_row.dart';
 import 'package:week_3_covid_19_store/widgets/item_widget.dart';
+import 'package:week_3_covid_19_store/widgets/sanitization.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -26,11 +27,22 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          ChoiceRow(),
-          ItemWidget(),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            ChoiceRow(),
+            ItemWidget(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Sanitization'),
+                Text('All'),
+              ],
+            ),
+            Sanitization(),
+          ],
+        ),
       ),
     );
   }
