@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'package:week_3_covid_19_store/data/products.dart';
@@ -13,6 +15,7 @@ class ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme _textTheme = Theme.of(context).textTheme;
     return GestureDetector(
       onTap: () => Navigator.of(context).push(MaterialPageRoute(
         builder: (BuildContext context) => ProductPage(
@@ -27,19 +30,32 @@ class ItemWidget extends StatelessWidget {
               height: 270,
               width: 200,
               decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.circular(10.0),
+                color: Color.fromRGBO(70, 70, 70, 0.5),
+                borderRadius: BorderRadius.circular(20.0),
               ),
+              padding: const EdgeInsets.symmetric(horizontal: 13.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text('${products.name}\n'),
-                  Text('by: ${products.manufacturer}\n'),
+                  // SizedBox(height: 150.0),
+                  Text(
+                    '${products.name}\n',
+                    style: _textTheme.headline6.copyWith(height: 0.5),
+                  ),
+                  Text(
+                    'by: ${products.manufacturer}\n',
+                    style: _textTheme.caption.copyWith(fontSize: 14.0),
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('\$${products.price}\n'),
+                      Text(
+                        '\$${products.price.toStringAsFixed(2)}\n',
+                        style:
+                            _textTheme.headline5.copyWith(color: Colors.yellow),
+                      ),
                       SizedBox(
                         width: 35,
                         child: RaisedButton(

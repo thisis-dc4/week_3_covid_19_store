@@ -27,7 +27,7 @@ class _ChoiceRowState extends State<ChoiceRow> {
             labelPadding: const EdgeInsets.symmetric(horizontal: 8.0),
             label: Text(
               _types[index],
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
             ),
             selected: _value == index,
             onSelected: (bool selected) {

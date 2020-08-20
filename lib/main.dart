@@ -12,8 +12,10 @@ class MyApp extends StatelessWidget {
       title: 'Covid-19 Online Store',
       theme: ThemeData.light()
           .copyWith(buttonTheme: ButtonThemeData(buttonColor: Colors.yellow)),
-      darkTheme: ThemeData.dark()
-          .copyWith(buttonTheme: ButtonThemeData(buttonColor: Colors.yellow)),
+      darkTheme: ThemeData.dark().copyWith(
+        buttonTheme: ButtonThemeData(buttonColor: Colors.yellow),
+        scaffoldBackgroundColor: Colors.black,
+      ),
       home: HomePage(),
     );
   }
