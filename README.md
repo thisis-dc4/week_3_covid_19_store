@@ -1,6 +1,8 @@
 # Week 3: Covid 19 Store
 
-A new Flutter project.
+This week's challenge.
+<br>
+<img src='https://github.com/thisis-dc4/week_3_covid_19_store/blob/master/Challenge.jpeg'>
 
 ## Getting Started
 
