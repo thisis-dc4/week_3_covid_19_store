@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class ProductPageImage extends StatefulWidget {
@@ -19,45 +21,48 @@ class _ProductPageImageState extends State<ProductPageImage> {
     return Stack(
       children: [
         Container(
-          child: Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              Container(
-                height: 290,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
+          child: ClipRRect(
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                Container(
+                  height: 290,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Colors.grey.withOpacity(0.3),
+                  ),
+                  margin: EdgeInsets.only(bottom: 40.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.arrow_back),
+                        onPressed: () => Navigator.of(context).pop(),
+                      ),
+                      IconButton(
+                        icon: widget.isFav
+                            ? Icon(
+                                Icons.favorite,
+                                color: Colors.red,
+                              )
+                            : Icon(Icons.favorite_border),
+                        onPressed: () {
+                          setState(() {
+                            widget.isFav = !widget.isFav;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
                 ),
-                margin: EdgeInsets.only(bottom: 40.0),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      icon: Icon(Icons.arrow_back),
-                      onPressed: () => Navigator.of(context).pop(),
-                    ),
-                    IconButton(
-                      icon: widget.isFav
-                          ? Icon(
-                              Icons.favorite,
-                              color: Colors.red,
-                            )
-                          : Icon(Icons.favorite_border),
-                      onPressed: () {
-                        setState(() {
-                          widget.isFav = !widget.isFav;
-                        });
-                      },
-                    ),
-                  ],
+                Image.asset(
+                  widget.image,
+                  height: 310,
                 ),
-              ),
-              Image.asset(
-                widget.image,
-                height: 310,
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],

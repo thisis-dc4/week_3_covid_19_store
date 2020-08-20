@@ -23,7 +23,8 @@ class _SizeSelectorState extends State<SizeSelector> {
           return ChoiceChip(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
-            labelPadding: const EdgeInsets.symmetric(horizontal: 8.0),
+            labelPadding:
+                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
             label: Text(
               _types[index],
               style: TextStyle(fontWeight: FontWeight.bold),

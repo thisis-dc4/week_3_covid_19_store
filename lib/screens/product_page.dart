@@ -17,6 +17,7 @@ class ProductPage extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ProductPageImage(
                 image: products.image,
@@ -27,17 +28,20 @@ class ProductPage extends StatelessWidget {
               ),
               SizeSelector(),
               QuantitySelector(),
-              RaisedButton(
-                onPressed: () {},
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-                textColor: Colors.black,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.card_travel),
-                    Text('Add to bucket'),
-                  ],
+              Container(
+                height: 50.0,
+                child: RaisedButton(
+                  onPressed: () {},
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0)),
+                  textColor: Colors.black,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.card_travel),
+                      Text('Add to bucket'),
+                    ],
+                  ),
                 ),
               )
             ],

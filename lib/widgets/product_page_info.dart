@@ -11,13 +11,24 @@ class ProductPageInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _textTheme = Theme.of(context).textTheme;
     return Text.rich(
       TextSpan(
         children: [
-          TextSpan(text: '${products.name}\n'),
-          TextSpan(text: '${products.manufacturer}\n'),
-          TextSpan(text: '${products.desc}\n'),
-          TextSpan(text: '\$${products.price}'),
+          TextSpan(text: '${products.name}\n', style: _textTheme.headline5),
+          TextSpan(
+            text: 'by ${products.manufacturer}\n',
+            style: _textTheme.caption.copyWith(fontSize: 16),
+          ),
+          TextSpan(text: '${products.desc}\n', style: _textTheme.subtitle1),
+          TextSpan(
+            text: '\$${products.price.toStringAsFixed(2)}',
+            style: _textTheme.headline5.copyWith(
+              color: Colors.yellow,
+              height: 2.5,
+              fontSize: 28.0,
+            ),
+          ),
         ],
       ),
       textAlign: TextAlign.center,
